@@ -9,9 +9,11 @@
   git clone https://github.com/AmitNiz/pythonModules.git
 ```
 #### Installation:
-- __Option 1__: Use the installation file (linux/mac):
 ```
 cd boarders/
+```
+- __Option 1__: Use the installation file (linux/mac):
+```
 ./install.sh
 ```
 - __Option 2__: Move Manually boarders.py to your favorite module folder.
@@ -24,7 +26,7 @@ import boarders
 ```
 #### Creating a Simple text box:
 ```
-box = boarders.createBox() # can also set a fixed size box by using createBox(width=X,height=X)
+box = boarders.createBox() # you can also set a fixed size box by using createBox(width=X,height=X)
 box.append('This is Boarders!')
 box.printBox()
 ```
