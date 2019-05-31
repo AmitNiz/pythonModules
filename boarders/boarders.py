@@ -3,7 +3,7 @@
 ###############################################
 / Creator:Amit Nizri                          /
 / Date: Jun 2019                              /
-/ github: https://github.com/Amitnzri         /
+/ github: https://github.com/AmitNiz          /
 ###############################################
 
 Easy and simple module for creating message boxes for CLI.
@@ -15,8 +15,7 @@ Easy and simple module for creating message boxes for CLI.
 '''
 #///////////////TODO:///////////////////
 #1.Add special boxes types.
-#2.Add append mode for arrays.
-#3.Add an option for box in a box mode.
+#2.Add an option for box in a box mode.
 
 class createBox:
     
@@ -40,6 +39,7 @@ class createBox:
         self.__textAllign = '<' 
         self.__margin = 1 
         self.__hPadding = 1
+
     def getDimensions(self):
         self.__updateDimensions
         '''Returns a tuples with the dimensions of the box.'''
@@ -97,6 +97,12 @@ class createBox:
     def append(self,string):
         '''Adds a new line to the box.'''
         self.__content.append(str(string))
+    
+    def append(self,arr):
+        '''Add new lines from a given array.'''
+        for line in arr:
+            self.__content.append(str(line))
+
 
     def pop(self,index=-1):
         '''Deletes a line from the box.'''
