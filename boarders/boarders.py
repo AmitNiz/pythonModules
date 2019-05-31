@@ -3,6 +3,7 @@
 ###############################################
 / Creator:Amit Nizri                          /
 / Date: Jun 2019                              /
+/ github: https://github.com/Amitnzri         /
 ###############################################
 
 Easy and simple module for creating message boxes for CLI.
@@ -37,8 +38,8 @@ class createBox:
         self.__horizontal_symbol = '*'
         self.__vertical_symbol = '*'
         self.__textAllign = '<' 
-        self.__margin = 1
-        self.__padding = 1
+        self.__margin = 1 
+        self.__hPadding = 1
     def getDimensions(self):
         self.__updateDimensions
         '''Returns a tuples with the dimensions of the box.'''
@@ -49,6 +50,7 @@ class createBox:
         for word in self.__content:
             max_len = len(word) if len(word) > max_len else max_len
         return max_len
+
     def __setAllignment(self,side):
         if side =='left':
             return '<'
@@ -61,6 +63,7 @@ class createBox:
         else:
             print('Wrong Allignment! Enter: left,right or center..')
             return None 
+
     def __updateDimensions(self): 
         line_width = self.__getMaxLineLen() + self.__margin*2 + len(self.__vertical_symbol*2)
         num_of_lines = len(self.__content)
@@ -68,26 +71,28 @@ class createBox:
         self.__width = self.__width if line_width < self.__width else line_width 
                       
 
-    def style(self,width=None ,height= None,textAllign = None ,
-                                            horizontal = None,vertical=None,
-                                            padding =None,margin = None):
+    def style(self,width=None ,height= None,allign = None ,
+                                            hSymbol = None,vSymbol = None,
+                                            hPadding =None,vPadding=None,
+                                            margin = None):
         '''
         Setting up the style of the box:
         widht - sets the width of the box.
         height - sets the height of the box.
-        textAllign -Sets the text allignments. Options:'left', 'center', 'right'
-        horizontal - Sets the horizontal symbols of the box. set to '*' by default
-        vertical - Sets the vertical symbols of the box. set to '*' by default.
-        padding - Sets the padding length.
+        allign -Sets the text allignments. Options:'left', 'center', 'right'
+        hSymbol - Sets the horizontal symbols of the box. set to '*' by default
+        vSymbol - Sets the vertical symbols of the box. set to '*' by default.
+        vPadding - Sets vertical padding. 
+        hPadding - Sets horizontal padding. 
         margin - Sets the margins length.
         '''
         self.__height = abs(int(height or self.__height))
         self.__width = abs(int(width or self.__width))
-        self.__textAllign = self.__setAllignment(textAllign) or self.__textAllign
-        self.__horizontal_symbol = horizontal or self.__horizontal_symbol
-        self.__vertical_symbol = vertical or self.__vertical_symbol
+        self.__textAllign = self.__setAllignment(allign) or self.__textAllign
+        self.__horizontal_symbol = hSymbol or self.__horizontal_symbol
+        self.__vertical_symbol = vSymbol or self.__vertical_symbol
         self.__margin = int(margin or self.__margin)
-        self.__padding = int(padding or self.__padding)
+        self.__hPadding = int(hPadding or self.__hPadding)
 
     def append(self,string):
         '''Adds a new line to the box.'''
@@ -125,15 +130,18 @@ class createBox:
         '''Prints the box.'''
         self.__updateDimensions()
         line_width=self.__width -2*self.__margin -2*len(self.__vertical_symbol)
-        fmt = '{padding}{edge}{margin}{text:{allignSign}{width}}{margin}{edge}' 
-        print(' '*self.__padding + self.__horizontal_symbol*(self.__width))
+        fmt = '{hPadding}{edge}{margin}{text:{allignSign}{width}}{margin}{edge}' 
+        top_buttom_fmt = ' '*self.__hPadding +self.__horizontal_symbol*self.__width
+
+        print(top_buttom_fmt) #The top of the box.
+
         for i in range(self.__height):
             line = '' if i >= len(self.__content) else self.__content[i]
             print(fmt.format(edge = self.__vertical_symbol,
                              margin =' '*self.__margin,
                              text = line,
-                             padding =' '*self.__padding,
+                             hPadding =' '*self.__hPadding,
                              width = line_width,
                              allignSign = self.__textAllign))
             
-        print(' '*self.__padding + self.__horizontal_symbol*(self.__width)) 
+        print(top_buttom_fmt) #The buttom of the box.
