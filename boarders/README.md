@@ -67,7 +67,7 @@ __Style Options__:
 Editing the text inside the boxes is just like with lists.
 you can use append,pop and get/set item using ```box[index]```.
 
-__Example__:
+Example:
 ```
 box[0] = 'Changed line'
 box.append('New Line')
