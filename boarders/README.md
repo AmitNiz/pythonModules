@@ -83,11 +83,11 @@ Results:
 ```
 
 #### Available methods:
-- createBox() - create a box instance (optional arguments: width,height).
-- getDimensions() - returns a tuple of the box dimensions.
-- printBox() - prints the box.
-- style() - sets the appearance of the box (all the arguments described above).
-- getMessage() - returns a copy of the box's text as a list.
+- ```createBox()``` - creates a box instance. Optional arguments: ```width``` ```height```.
+- ```getDimensions()``` - returns a tuple of the box dimensions.
+- ```printBox()``` - prints the box.
+- ```style()``` - sets the appearance of the box (all the arguments described above).
+- ```getMessage()``` - returns a copy of the box's text as a list.
 
 
 ## Todos:
