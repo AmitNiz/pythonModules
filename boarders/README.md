@@ -1,7 +1,7 @@
 ## What is it Boarders :question::confused:
 Boarders is a python module, created especially for designing CLI tools.
 
-Boarders helps you to easily create and modify unique text boxes, and improve your tool's UI experiene.
+With Boarders you can easily create and modify unique text boxes, and improve your tool's UI experiene.
 
 
 ##  :package:How to install Boarders?
