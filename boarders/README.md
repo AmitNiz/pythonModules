@@ -43,15 +43,15 @@ Using ```box.style()```
 you can change the horizontal/vertical symbols of the box,change the dimensions,
 add padding and margin and allign the text.
 
-For example, lets change the horizontal symbols,add some margin and padding, and allign the text to the center.
+For example, lets change the symbols,add some margin and padding, and allign the text to the center.
 ```
-box.style(hSymbol ='@@',hMargin = 3,hPadding = 35,allign ='center')
+box.style(hSymbol ='%%',vSymbol ='-',hMargin = 3,hPadding = 35,allign ='center')
 ```
 Results:
 ```
-                                   ***************************
-                                   @@   This is Boarders!   @@
-                                   ***************************
+                                   ---------------------------
+                                   %%   This is Boarders!   %%
+                                   ---------------------------
 ```
 __Style Options__:
 - width - sets the width of the box.
@@ -77,10 +77,10 @@ box.style(hPadding = 40) # you can also make changes in the style (the untouched
 
 Results:
 ```
-                                        **********************
-                                        @@   Changed line   @@
-                                        @@     New Line     @@
-                                        **********************
+                                        ----------------------
+                                        %%   Changed line   %%
+                                        %%     New Line     %%
+                                        ----------------------
 ```
 
 #### Available methods:
