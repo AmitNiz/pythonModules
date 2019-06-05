@@ -1,4 +1,4 @@
-## What is it Boarders :question::confused:
+## What is it Boarders :question:
 Boarders is a python module, created especially for designing CLI tools.
 
 With Boarders you can easily create and modify unique text boxes, and improve your tool's UI experiene.
